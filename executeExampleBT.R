@@ -1,25 +1,20 @@
 # clear all
 rm(list=ls(all=TRUE))
 
-# load packages
-library(batchtools)
 # Source
 source("calcCorrelationParallel.R")
 
 # Settings
 # number of columns per chunk
-cols.per.part = 40
-# name for BatchJobs
-reg.name = "calcCorrelationBT"
+cols.per.subset = 40
 
 # sample data
 data = matrix(rnorm(1e6), ncol=100)
 
 # calculate correlation matrix
-corMatrix <- calcCorrelationParBT(reg.name, data
-                                  , cols.per.part
+corMatrix = calcCorrelationParBT(data, cols.per.subset
                                   , cor.use = "pairwise.complete.obs"
-                                  , test.mode = FALSE
+                                  , test.mode = TRUE
                                   )
 
 # if all jobs succeed, save correlation matrix
