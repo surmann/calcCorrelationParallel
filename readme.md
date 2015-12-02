@@ -1,4 +1,4 @@
-Calculate Correlation Matrix in Parallel with [BatchJobs](https://github.com/tudo-r/BatchJobs)
+Calculate Correlation Matrix in Parallel
 ----------------------------------------------------------------------------------------------
 
 The code provides a function to calculate a correlation matrix out of huge data matrix.
