@@ -9,7 +9,9 @@ source("calcCorrelationParallel.R")
 cols.per.subset = 40
 
 # sample data
-data = matrix(rnorm(1e6), ncol=100)
+n.rows = 1e6
+n.cols = 1e2
+data = matrix(rnorm(n.rows*n.cols), ncol = n.cols)
 
 # calculate correlation matrix
 corMatrix = calcCorrelationParBT(data, cols.per.subset
